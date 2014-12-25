@@ -1,4 +1,4 @@
-public ArrayList<Tokens> t=new ArrayList<Tokens> ();
+public ArrayList<Tokens> t=new ArrayList<Tokens> (); 
 int orginalSize=60;
 int numberOfShakes=0;
 public void setup()
