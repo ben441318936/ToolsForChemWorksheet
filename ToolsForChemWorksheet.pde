@@ -1,12 +1,12 @@
 public ArrayList<Tokens> t=new ArrayList<Tokens> (); 
-int orginalSize=60;
+double orginalSize=60;
 int numberOfShakes=0;
 public void setup()
 {
 	size(500,500);
 	background(0);
 	noLoop();
-	for(int i=0;i<orginalSize;i++)
+	for(double i=0;i<orginalSize;i++)
 	{
 		t.add(new Tokens());
 	}
@@ -14,9 +14,9 @@ public void setup()
 public void draw()
 {
 	background(0);
-	for(int i=0;i<t.size();i++)
+	for(double i=0;i<t.size();i++)
 	{
-		t.get(i).draw();
+		t.get((int)i).draw();
 	}
 	textAlign(CENTER,CENTER);
 	textSize(16);
@@ -26,15 +26,15 @@ public void draw()
 }
 public void mousePressed()
 {
-	for(int i=0;i<t.size();i++)
+	for(double i=0;i<t.size();i++)
 	{
-		t.get(i).shake();
+		t.get((int)i).shake();
 	}
-	for(int i=0;i<t.size();i++)
+	for(double i=0;i<t.size();i++)
 	{
-		if(t.get(i).getDecayed()==true)
+		if(t.get((int)i).getDecayed()==true)
 		{
-			t.remove(i);
+			t.remove((int)i);
 			i--;
 		}
 	}
@@ -46,7 +46,7 @@ public void keyPressed()
 	if(key=='r' || key=='R')
 	{
 		t=new ArrayList<Tokens> ();
-		for(int i=0;i<orginalSize;i++)
+		for(double i=0;i<orginalSize;i++)
 		{
 			t.add(new Tokens());
 		}
